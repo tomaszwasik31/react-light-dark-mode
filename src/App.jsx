@@ -31,10 +31,14 @@ import "./App.css";
 //     and see if you can find the hint in the code as
 //     to how/where that should happen.
 export default function App() {
+  const [darkMode, setDarkMode] = React.useState(false);
+function toggle (){
+  setDarkMode(prevMode => !prevMode)
+}
   return (
     <div className="container">
-      <Navbar />
-      <Main />
+      <Navbar darkMode={darkMode} toggleDarkMode={toggle}/>
+      <Main darkMode={darkMode} />
     </div>
   );
 }
